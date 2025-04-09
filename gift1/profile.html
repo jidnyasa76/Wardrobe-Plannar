@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <section class="user-profile">
+        <div class="profile-info">
+            <h2>User Profile</h2>
+            <form id="profileForm" action="save_profile.php" method="POST" onsubmit="return validateForm()">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" value="Temp" required>
+
+                <label for="userid">UserName:</label>
+                <input type="text" id="userid" name="userid" value="Temp_user" readonly>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="Tempuser@gmail.com" required>
+               
+                <button type="button" onclick="window.location.href='index.html'">Back to Home!</button>
+
+             
+            </form>
+        </div>
+
+        
+    </section>
+
+    <script>
+        // Form Validation
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Check if name, email, or password is empty
+            if (name === "" || email === "" || password === "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            // Check if password is at least 6 characters long
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            // Confirm before saving
+            const confirmSave = confirm("Are you sure you want to save changes?");
+            if (!confirmSave) {
+                // Redirect to home page if canceled
+                window.location.href = 'index.html';
+                return false; // Prevent form submission
+            }
+
+            // If confirmed, redirect to home page
+            window.location.href = 'index.html'; // Change this to your home page
+            return true; // Allow form submission
+        }
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text'; // Show password
+                eyeIcon.src = 'img/eye-icon-open.jpg'; // Change eye icon to "open"
+                eyeIcon.alt = 'Hide Password'; // Update alt text
+            } else {
+                passwordField.type = 'password'; // Hide password
+                eyeIcon.src = 'img/eye-icon.png'; // Change eye icon to "closed"
+                eyeIcon.alt = 'Show Password'; // Update alt text
+            }
+        }
+    </script>
+</body>
+</html>

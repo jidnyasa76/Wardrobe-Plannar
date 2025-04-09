@@ -1,0 +1,257 @@
+:root{
+   --brown: #6e4b3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+
+}
+section{
+   padding:5rem 9%;
+}
+footer {
+    background-color: #e4dfdf;
+    padding: 4rem 9%;
+    margin-top: 5rem;
+    font-size: 1.6rem;
+    color: #6e4b3c;
+    text-align: center;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color:#fff;
+    padding:1rem;
+    margin:2rem 0;
+    margin-top: 1rem;
+    background:#6e4b3c;
+}
+
+.heading span{
+    color:#fff;
+}
+
+.btn{
+   position: relative; 
+   top: 9rem;  
+   left: 45rem; 
+   display: inline-block;
+   margin-top: 5rem;
+   border-radius: 5rem;
+   background: #6e4b3c;
+   color: #fff;
+   padding: .9rem 4rem;
+   cursor:pointer;
+   font-size: 1.7rem;
+}
+
+.btn:hover{
+   background:var(--brown);
+}
+
+
+header {
+    position: fixed;
+    top:0; left:0; right:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 5%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    
+}
+
+header .logo{
+     font-size: 3rem;
+     color:#6e4b3c;
+     font-weight: bolder;
+}
+
+header .logo span{
+     color:#6e4b3c;
+}
+
+header .navbar a{
+      justify-content: flex-start;
+      font-size: 2rem;
+      padding:0 6rem;
+      color:#6e4b3c;
+      position: relative;
+      transition: color 0.3s ease, transform 0.3s ease;
+     
+}
+header .navbar a:hover{
+       color:var(--brown);
+       transform: scale(1.1);
+}
+
+header .navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;  
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brown); 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+header .navbar a:hover::before {
+    transform: scaleX(1); 
+}
+
+
+header .icons a{
+     font-size: 2.5rem;
+     color:#6e4b3c;
+     margin-left: 1.5rem;
+}
+
+
+
+header .icons a:hover{
+    color:var(--brown);
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background:url("img/banner2.jpg");
+    background-size:cover;
+    background-position: center;
+}
+
+.home .content{
+   max-width: 50rem;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+
+}
+
+.about .row .video-container{
+      flex:1 1 40rem;
+      position:relative;
+
+}
+
+
+.about .row .video-container video{
+      width:100%;
+      border:1.5rem solid #fff;
+      border-radius: .5rem;  
+      box-shadow:0 .5rem 1rem rgba(0,0,0, .1);
+      height:100%;
+      object-fit: cover;
+}
+
+.about .row .content{
+      flex: 1 1 40rem;
+}
+
+.about .row .content p{
+      font-size: 2rem;
+      color:#6e4b3c;
+      padding: 3rem 0;
+      padding-top: 1rem;
+      line-height:2.5rem;
+      text-align: justify;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Quick Links */
+.quick-links,
+.contact-info {
+    flex: 1 1 20rem;
+}
+
+.quick-links h3 {
+    font-size: 2.5rem;
+    color: #6e4b3c;
+    margin-bottom: 1rem;
+    margin-right: 150px;
+}
+
+.contact-info h3{
+    font-size: 2.5rem;
+    color: #6e4b3c;
+    margin-bottom: 1rem;
+}
+.quick-links ul {
+    list-style: none;
+    text-align: justify;
+    margin-left: 110px; /* Adjust as needed */
+    padding-left: 30px;
+}
+
+.contact-info ul {
+    list-style: none;
+    text-align: justify;
+    margin-left: 100px; /* Increase margin to move it more to the right */
+    padding-left: 30px;
+}
+
+
+
+.quick-links ul li,
+.contact-info ul li {
+    margin-bottom: 1rem;
+}
+
+.quick-links ul li a,
+.contact-info ul li a {
+    color: #6e4b3c;
+    text-decoration: none;
+}
+
+.quick-links ul li a:hover,
+.contact-info ul li a:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
+
+/* Credit Section */
+.credit {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #6e4b3c;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-top: 1.5rem;
+}
+
+.credit span {
+    color: var(--brown);
+}
+

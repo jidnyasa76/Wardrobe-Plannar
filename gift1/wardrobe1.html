@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardrobePlanner</title>
+    <link rel="stylesheet" href="wardrobe.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="fashion.js" defer></script>
+    <style>
+        .top, .bottom, .dress, .ethnic, .shoes, .sandal {
+            border: 2px solid rgb(151, 130, 124);
+            border-radius: 5px;
+            text-align: center;
+            max-width: 250px;
+            display: inline-block;
+            max-height: 1500px;
+            background-color: rgb(151, 130, 124);
+            box-shadow: 4px 4px 4px rgba(49, 39, 39, 0.5);
+            margin: 10px;
+           
+        }
+
+        input[type="file"] {
+            background-color: rgb(151, 130, 124);
+        }
+
+        .top img, .bottom img, .dress img, .ethnic img, .shoes img, .sandal img {
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .item {
+            display: inline-block;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .item img {
+            height: 100px;
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .item span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .button, .saveButton {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .generate {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .result img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <a href="index.html">
+        <i class="fa-solid fa-house" style="color: #5d2b16; font-size: 20px;"></i>
+    </a>
+<!-- Welcome Text -->
+<h1 style="text-align: center; color: #5d2b16; font-size: 50px; margin: 0;">Welcome to your Wardrobe!</h1>
+ <div class="bg">
+    <div class="upload">
+        <form enctype="multipart/form-data">
+            <div class="top">Upload Topwear Images
+                <img src="images/topwear.png" alt="">
+                <input type="file" id="topwear" multiple><br>
+            </div>
+            
+            <div class="bottom">Upload Bottomwear Images:
+                <img src="images/bottomwear.png" alt="">
+                <input type="file" id="bottomwear" multiple><br>
+            </div>
+
+            <div class="dress">Upload Dresses Images:
+                <img src="images/dress.png" alt="">
+                <input type="file" id="dresses" multiple><br>
+            </div>
+
+            <div class="ethnic">Upload Ethnic Wear Images:
+                <img src="images/ethnic.jpeg" alt="">
+                <input type="file" id="ethnic" multiple><br>
+            </div>
+
+            <div class="shoes">Upload Shoes Images:
+                <img src="images/shoes.png" alt="">
+                <input type="file" id="shoes" multiple><br>
+            </div>
+
+            <div class="sandal">Upload Sandals Images:
+                <img src="images/sandals.png" alt="">
+                <input type="file" id="sandals" multiple><br>
+            </div>
+        </form>
+
+        <div class="saveButton">
+            <button type="button" onclick="saveImages()">Save Images</button>
+        </div>
+    </div>
+</div>
+    <div class="select">
+        <h1 style="text-align: center; color: #5d2b16; font-size: 30px;">Select the type for your OOTD!</h1>
+    </div>
+
+    <div class="select-cloth">
+        <form>
+            <label class="item">
+                <input type="checkbox" id="checkbox-topwear">
+                <img src="images/topwear.png" alt="Top Wear">
+                <span>Top Wear</span>
+            </label>
+
+            <label class="item">
+                <input type="checkbox" id="checkbox-bottomwear">
+                <img src="images/bottomwear.png" alt="Bottom Wear">
+                <span>Bottom Wear</span>
+            </label>
+
+            <label class="item">
+                <input type="checkbox" id="checkbox-dresses">
+                <img src="images/dress.png" alt="Dresses">
+                <span>Dresses</span>
+            </label>
+
+            <label class="item">
+                <input type="checkbox" id="checkbox-ethnic">
+                <img src="images/ethnic.jpeg" alt="Ethnic">
+                <span>Ethnic</span>
+            </label>
+
+            <label class="item">
+                <input type="checkbox" id="checkbox-shoes">
+                <img src="images/shoes.png" alt="Shoes">
+                <span>Shoes</span>
+            </label>
+
+            <label class="item">
+                <input type="checkbox" id="checkbox-sandals">
+                <img src="images/sandals.png" alt="Sandals">
+                <span>Sandals</span>
+            </label>
+        </form>
+    </div>
+
+    <div class="button">
+        <input type="button" value="Generate Outfit!" onclick="generateRandomImages()">
+    </div>
+
+    <!-- <div class="generate">
+        <h2>Your Outfit:</h2>
+        <div class="result" id="result"></div>
+    </div> -->
+
+
+     <!-- Modal Popup -->
+     <div id="outfitModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your Outfit:</h2>
+            <div class="result" id="result"></div>
+
+            <div class="btn-container">
+                <button onclick="generateRandomImages()">Next Outfit</button>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
